@@ -1,2 +1,2 @@
-# EQ2341ProjectMatlab62020
-EQ2341ProjectMatlab62020
+# EQ2341Project
+EQ2341 Matlab 6
