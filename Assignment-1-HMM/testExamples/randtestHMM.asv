@@ -1,0 +1,7 @@
+clear
+nSamples=10000;
+mc=[0.75;0.25];
+pD1=GaussD;
+pD2=GaussD(mean,3,StDev,sqrt(3));
+h=HMM(mc,[pD1;pD2]);
+[X,S]=rand(h,nSamples)
