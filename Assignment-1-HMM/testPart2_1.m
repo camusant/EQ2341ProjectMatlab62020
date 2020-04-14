@@ -64,8 +64,9 @@ L6 = length(X6)
 %% Question 7
 
 % Goal have an output matrix with C =[2 1; 1,4]
-pDgen7(1)=GaussD('Mean',[0 0] ,'StDev', [3 1]);
-pDgen7(2)=GaussD('Mean' ,[1 0] ,'StDev',[1 3]);
+pDgen7(1)=GaussD('Mean',[0 0] ,'StDev', [1 2]);
+pDgen7(2)=GaussD('Mean' ,[0 0] ,'StDev',[1 2]);
 
 hTest7 = HMM(mcTest1, pDgen7);
 [X7,S7] = rand(hTest7, T);
+C7 = cov(X7(1,:),X7(2,:))
