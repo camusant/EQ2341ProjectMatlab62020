@@ -27,13 +27,26 @@ nS=mc.nStates;
 %error('Method not yet implemented');
 Initial=DiscreteD(mc.InitialProb);%get the initial state
 S(1)=rand(Initial,1);%choose random one to be the first state
+End=0;
+i=2;
 
-for i=2:T
-    Transitionstate=DiscreteD(mc.TransitionProb(S(i-1),:)); % get the transition vector
-    S(i)=rand(Transitionstate,1); % choose random one to be current state
-    if mc.finiteDuration && S(i)==nS+1 % check if the Markov chain has an END state and if is finite, stops at S(nState+1)
-        S=S(1:i-1);
+if size(mc.TransitionProb,2)==size(mc.TransitionProb,1)+1 
+    while i<=T && End==0
+        Transitionstate=DiscreteD(mc.TransitionProb(S(i-1),:)); % get the transition vector
+        S(i)=rand(Transitionstate,1);
+        if S(i)==nS+1
+            S=S(1:i-1);
+            End=1;
+        end
+        i=i+1;
     end
+end
+if size(mc.TransitionProb,2)==size(mc.TransitionProb,1)
+    for i=2:T
+        Transitionstate=DiscreteD(mc.TransitionProb(S(i-1),:)); % get the transition vector
+        S(i)=rand(Transitionstate,1); % choose random one to be current state
+    end
+end
 end
 %continue code from here, and erase the error message........
 
