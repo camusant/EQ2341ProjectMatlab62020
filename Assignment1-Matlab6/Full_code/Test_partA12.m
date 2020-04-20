@@ -37,7 +37,7 @@ title('Question 2.5 - HMM behaviour with \mu_1=\mu_2=3','FontWeight','bold')
 %2.6 Check for finite-duration HMM
 mc4=MarkovChain([0.75;0.25],[0.99 0.005 0.005;0.03 0.96 0.01]); % create transition matrix with exit state
 h4=HMM(mc4,[pD1;pD2]);
-[X4,S4]=rand(h4,nSamples);
+[X4,S4]=rand(h4,nSamples1);
 tabulate(S4)
 L=length(S4) %if L <= nSamples, this means the sequence reach exit state during the procedure, otherwise it should always be equal to nSamples
 
@@ -47,6 +47,6 @@ L=length(S4) %if L <= nSamples, this means the sequence reach exit state during 
 pD3=GaussD('Mean',[0 1],'StDev',[1 2]); 
 pD4=GaussD('Mean',[0 1],'StDev',[3 4]);
 h5=HMM(mc,[pD3;pD4]);
-[X5,S5]=rand(h5,nSamples);
+[X5,S5]=rand(h5,nSamples1);
 size=size(X5);
 C=cov(X5(:,1),X5(:,2)) %calculate covariance and print, it should not be diagonal matrix. 
