@@ -18,7 +18,8 @@ L=length(STest)
 
 %2.7test for  Gaussian vector distributions
 pD1=GaussD('Mean',[0 1],'StDev',[1 2]);
-pD2=GaussD('Mean',[0 3],'StDev',[1 2]);
+pD2=GaussD('Mean',[0 1],'StDev',[3 4]);
 h=HMM(mc,[pD1;pD2]);
-[X,S]=rand(h,100);
-C=cov(X(:,:,1),X(:,:,2))
+[X,S]=rand(h,nSamples);
+size=size(X)
+C=cov(X(:,1),X(:,2))
