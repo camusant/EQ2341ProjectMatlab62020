@@ -6,6 +6,7 @@ pD1=GaussD;
 pD2=GaussD('Mean',3,'StDev',2);
 h=HMM(mc,[pD1;pD2]);
 [X,S]=rand(h,nSamples);
+subplot(2,1,1)
 plot(1:nSamples,X);
 xlabel("t")
 ylabel("X_t")
@@ -16,6 +17,7 @@ pD1=GaussD;
 pD2Test=GaussD('Mean',0,'StDev',2);
 hTest=HMM(mc,[pD1;pD2Test]);
 [XTest,STest]=rand(hTest,nSamples);
+subplot(2,1,2)
 plot(1:nSamples,XTest);
 xlabel("t")
 ylabel("X_t")

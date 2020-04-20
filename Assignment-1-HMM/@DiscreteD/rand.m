@@ -20,11 +20,6 @@ pDprb = full(pD.ProbMass);
 L=length(pDprb);
 R0 = randsample(L, nData, true, pDprb);
 R=transpose(R0);
-%R = zeros(1, nData);
-%cumProbs = cumsum(pD.ProbMass);
-
-%for i = 1:nData
- %   R(i) = find(rand(1) < cumProbs, 1); 
 end
 %*** Insert your own code here and remove the following error message 
 

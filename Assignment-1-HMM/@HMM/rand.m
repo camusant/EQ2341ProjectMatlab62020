@@ -26,7 +26,7 @@ end
 
 %continue coding from here, and delete the error message.
 S=rand(h.StateGen,nSamples); % get the state values with size corresponding to nSamples
-X=zeros(h.OutputDistr.DataSize,length(S)); % space for resulting X, with length(S) == size(X,2)
+X=zeros(h.OutputDistr(1).DataSize,length(S)); % space for resulting X, with length(S) == size(X,2)
 for i=1:length(S)
     X(:,i)=h.OutputDistr(S(i)).rand(1); % choose random one of output distributions with certain state
 end
