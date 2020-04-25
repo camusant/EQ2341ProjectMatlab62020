@@ -8,7 +8,9 @@ for i=1:length(u)
     else 
          plot3(frIsequence(1,i),frIsequence(2,i),frIsequence(3,i),'yo'); 
     end
+    hold on
 end
+hold off
 %Cluster center
 
 %get the pitches
