@@ -9,9 +9,9 @@ clear
 [frIseq3] = GetMusicFeatures(y3,Fs1);
 
 %Features extract
-[Sem1]=k_means_extract(frIseq1);
-[Sem2]=k_means_extract(frIseq2);
-[Sem3]=k_means_extract(frIseq3);
+[Sem1, fmin1]=k_means_extract(frIseq1);
+[Sem2, fmin2]=k_means_extract(frIseq2);
+[Sem3, fmin3]=k_means_extract(frIseq3);
 
 figure(4)
 subplot(3,1,1)
