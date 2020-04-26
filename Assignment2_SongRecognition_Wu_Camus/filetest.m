@@ -3,12 +3,12 @@ clear
 [y2]=audioread('Songs/melody_2.wav');
 [y3]=audioread('Songs/melody_3.wav');
 
-% Get music features foe each melody
+%% Get music features foe each melody
 [frIseq1] = GetMusicFeatures(y1,Fs1);
 [frIseq2] = GetMusicFeatures(y2,Fs1);
 [frIseq3] = GetMusicFeatures(y3,Fs1);
 
-%Features extract
+%% Features extract
 [Sem1, fmin1]=k_means_extract(frIseq1);
 [Sem2, fmin2]=k_means_extract(frIseq2);
 [Sem3, fmin3]=k_means_extract(frIseq3);
