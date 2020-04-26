@@ -1,6 +1,7 @@
 function [Semitone]=k_means_extract(frIsequence)
 [u re]=kmeans(frIsequence',2);  %u Data column; re: Clustering center
 
+figure
 for i=1:length(u)
     if u(i)==1    
          plot3(frIsequence(1,i),frIsequence(2,i),frIsequence(3,i),'co'); 
