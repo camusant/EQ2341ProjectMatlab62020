@@ -36,5 +36,14 @@ for i=1:numel(hmm)%for all HMM objects
     %
     %logP(i)= result for hmm(i)
     %continue coding from here, and delete the error message.
-    error('Not yet implemented');
+    if hmm(i).DataSize==size(x,1)%observed vector size OK
+        mc=hmm(i).StateGen;
+        pX=exp(logprob(hmm(i).OutputDistr,x));
+        [alfaHat, c]=forward(mc,pX);
+        logP(i)=sum(log(c));
+    else
+        warning('HMM:WrongDataSize','Incompatible data size');
+        logP(i)=repmat(-Inf,1,T);%zero probability
+    end;
+    %error('Not yet implemented');
 end;
