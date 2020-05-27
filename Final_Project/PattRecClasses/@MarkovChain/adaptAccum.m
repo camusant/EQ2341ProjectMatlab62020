@@ -50,7 +50,7 @@ A=mc.TransitionProb;
 betaHat = backward(mc,pX,c);
 
 % Calculate gamma
-gamma = alfaHat.*betaHat.*repmat(c(1:T),nStates,1);
+gamma = alfaHat.*betaHat.*repmat(c(1:T)',nStates,1);
 
 % Initial probabilities, aState.pI += gamma(t=1)
 aState.pI = aState.pI + gamma(:,1);

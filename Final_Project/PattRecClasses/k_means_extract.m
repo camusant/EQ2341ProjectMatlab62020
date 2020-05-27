@@ -57,3 +57,5 @@ for i=1:length(u)
     Semitone(i)=round(12*log2(frIsequence(1,i)/minbound))+1;
     end
 end
+Semitone = Semitone+1;   % Correction to avoid an error with the zero during the training (1=silence)
+end
